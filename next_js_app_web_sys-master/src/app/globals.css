@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #6366F1; /* Vivid Indigo */
+  --secondary-color: #10B981; /* Emerald Green */
+  --background-light: #F9FAFB; /* Near White */
+  --background-dark: #1E293B; /* Very Dark Blue */
+  --text-light: #111827; /* Dark Gray */
+  --text-dark: #E5E7EB; /* Light Gray */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #6366F1; /* Vivid Indigo */
+    --secondary-color: #10B981; /* Emerald Green */
+    --background-light: #1E293B; /* Very Dark Blue */
+    --background-dark: #111827; /* Dark Gray */
+    --text-light: #E5E7EB; /* Light Gray */
+    --text-dark: #FFFFFF; /* White */
+  }
+}
+
+body {
+  color: var(--text-light);
+  background-color: var(--background-light);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Enhancing Tailwind Utilities */
+
+@layer utilities {
+  .text-balance {
+    hyphens: auto;
+  }
+
+  .bg-primary {
+    background-color: var(--primary-color);
+    transition: background-color 0.3s ease;
+  }
+
+  .text-primary {
+    color: var(--primary-color);
+  }
+
+  .hover\:bg-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+  }
+
+  .bg-secondary {
+    background-color: var(--secondary-color);
+    transition: background-color 0.3s ease;
+  }
+
+  .text-secondary {
+    color: var(--secondary-color);
+  }
+
+  .hover\:bg-secondary:hover {
+    background-color: darken(var(--secondary-color), 10%);
+  }
+
+  .bg-dark {
+    background-color: var(--background-dark);
+  }
+
+  .text-dark {
+    color: var(--text-dark);
+  }
+
+  .bg-gradient-to-b {
+    background-image: linear-gradient(to bottom, var(--background-light), var(--background-dark));
+  }
+
+  .bg-gradient-to-t {
+    background-image: linear-gradient(to top, var(--background-light), var(--background-dark));
+  }
+
+  .bg-gradient-to-tr {
+    background-image: linear-gradient(to top right, var(--background-light), var(--background-dark));
+  }
+
+  .bg-gradient-to-bl {
+    background-image: linear-gradient(to bottom left, var(--background-light), var(--background-dark));
+  }
+
+  .bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, var(--background-light), var(--background-dark));
+  }
+}
